@@ -1,0 +1,622 @@
+/* =========================
+   HEADER GLOBAL
+========================= */
+header {
+    background: linear-gradient(135deg, #2b0000, #5a0000, #8b0000);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--red);
+}
+
+.logo-img {
+    width: 36px; /* ajuste si besoin */
+    height: 36px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.logo-text {
+    line-height: 1;
+}
+
+/* =========================
+   LOGO
+========================= */
+header .navbar-brand {
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+header .navbar-brand:hover {
+    transform: scale(1.05);
+}
+header .navbar-brand i {
+    color: #ff2e2e;
+    margin-right: 6px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+header .nav-link {
+    position: relative;
+    margin: 0 10px;
+    font-weight: 500;
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+    will-change: color;
+}
+header .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #ff2e2e;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+header .nav-link:hover {
+    color: #ff2e2e !important;
+}
+header .nav-link:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.header-search {
+    position: relative;
+    will-change: width, background-color;
+}
+.header-search input {
+    width: 200px;
+    padding: 8px 36px 8px 16px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.header-search input::placeholder {
+    color: #f2caca;
+}
+.header-search input:focus {
+    width: 240px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.header-search i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff2e2e;
+    pointer-events: none;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.btn-login {
+    background: linear-gradient(135deg, #ff2e2e, #b30000);
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    will-change: transform, box-shadow;
+}
+.btn-login i {
+    margin-right: 6px;
+}
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 46, 46, 0.6);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+#mobileNav {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+#mobileNav .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+    header .nav-link {
+        margin: 8px 0;
+    }
+    .header-search {
+        margin: 15px auto;
+    }
+    .header-search input {
+        width: 85%;
+    }
+}
+
+/* =========================
+   HOME SECTION / CAROUSEL
+========================= */
+.home-section-lg {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -40px; /* remonte la section sous le header */
+    padding-top: 0px;
+}
+#homeCarousel .carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 1s ease;
+    will-change: transform;
+    image-rendering: auto;
+    object-position: center;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 5;
+}
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff2e2e;
+    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+}
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: #f3cccc;
+    margin-bottom: 2rem;
+}
+.carousel-caption .btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+.carousel-caption .btn:hover {
+    transform: translateY(-3px);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    width: 3rem;
+    height: 3rem;
+}
+.carousel-indicators button {
+    background-color: #ff2e2e;
+}
+.carousel-indicators .active {
+    background-color: #b30000;
+}
+@media (max-width: 992px) {
+    .carousel-caption h1 {
+        font-size: 2.4rem;
+    }
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    .carousel-caption {
+        top: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-section-lg {
+        margin-top: -30px; /* ajuste selon la hauteur mobile du header */
+    }
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+    background-color: #fff5f5;
+    color: #333;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+.about-section h2 {
+    font-size: 2.8rem;
+    color: #ff2e2e;
+    margin-bottom: 2rem;
+}
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+.about-section img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    will-change: transform;
+}
+.about-section .counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff2e2e;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+.about-section .btn-login,
+.about-section .btn-outline-dark {
+    will-change: transform, background-color;
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   ABOUT SECTION BUTTONS FIX MOBILE
+========================= */
+.about-section .btn-container {
+    display: flex; /* garde les boutons en ligne */
+    gap: 15px; /* espace entre les boutons */
+    flex-wrap: nowrap; /* empêche le passage en colonne */
+    justify-content: center; /* centre les boutons */
+}
+
+.about-section .btn-login,
+.about-section .btn-outline-dark {
+    flex: 1 1 auto; /* les boutons peuvent se réduire */
+    max-width: 200px; /* largeur max identique au PC */
+    white-space: nowrap; /* texte ne casse pas */
+}
+
+/* Responsive pour écrans ≤ 576px (mobiles très petits) */
+@media (max-width: 576px) {
+    .about-section .btn-login,
+    .about-section .btn-outline-dark {
+        flex: 1 1 45%; /* les boutons se rétrécissent pour rester côte à côte */
+        font-size: 1rem; /* texte un peu plus petit */
+        padding: 6px 12px; /* réduit padding pour tenir sur ligne */
+    }
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+.skills-section {
+    background-color: #fff0f0;
+    padding: 100px 0;
+}
+.skills-section h2 {
+    font-size: 2.8rem;
+    color: #ff2e2e;
+    margin-bottom: 1rem;
+}
+.skills-section p.lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+.skill-card {
+    background-color: #fff;
+    border-radius: 15px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: default;
+}
+.skill-card i {
+    color: #ff2e2e;
+    transition: transform 0.3s ease;
+}
+.skill-card h5 {
+    color: #ff2e2e;
+    margin-bottom: 0.8rem;
+}
+.skill-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+.skill-card:hover i {
+    transform: scale(1.2);
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+.projects-section {
+    background-color: #fff5f5;
+    padding: 100px 0;
+}
+.projects-section h2 {
+    font-size: 2.8rem;
+    color: #ff2e2e;
+    margin-bottom: 1rem;
+}
+.projects-section p.lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+.project-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+}
+.project-card img.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+.project-card:hover img.card-img-top {
+    transform: scale(1.05);
+}
+.project-card .card-body h5 {
+    color: #ff2e2e;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.project-card .card-body p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+    background-color: #fff0f0;
+    padding: 100px 0;
+    color: #333;
+}
+.contact-section h2 {
+    font-size: 2.8rem;
+    color: #ff2e2e;
+    margin-bottom: 1rem;
+}
+.contact-section p.lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+.contact-form .form-control {
+    border-radius: 12px;
+    border: 1px solid #ff2e2e;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+.contact-form .form-control:focus {
+    border-color: #b30000;
+    box-shadow: 0 0 8px rgba(255, 46, 46, 0.3);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer-section {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 60px 0 40px;
+    font-size: 0.95rem;
+}
+.footer-section h5 {
+    color: #ff2e2e;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.footer-section p,
+.footer-section li {
+    color: #ccc;
+    line-height: 1.7;
+}
+.footer-section a {
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+.footer-section a:hover {
+    color: #ff2e2e;
+    transform: translateY(-2px);
+}
+.footer-section .fs-5 {
+    transition: all 0.3s ease;
+}
+.footer-section .fs-5:hover {
+    color: #ff2e2e;
+    transform: translateY(-3px);
+}
+.footer-section hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.footer-section p.mb-0 {
+    color: #999;
+    margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+    /* Conteneur flex */
+    .header-container-mobile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        width: 100%;
+    }
+
+    /* Barre de recherche */
+    .header-search {
+        flex: 1 1 auto; /* occupe tout l'espace restant */
+        max-width: calc(
+            100% - 50px
+        ); /* laisse la place pour le bouton hamburger */
+    }
+
+    .header-search input {
+        width: 100% !important; /* prend toute la largeur possible dans son conteneur */
+    }
+
+    /* Bouton hamburger */
+    .btn-hamburger-mobile {
+        flex: 0 0 auto; /* ne grandit jamais */
+    }
+}
+
+/* Barre de recherche initialement réduite */
+.header-search {
+    width: auto;
+    position: relative;
+}
+
+.header-search input {
+    width: 30px; /* largeur minimale pour être cliquable */
+    padding: 8px 12px; /* padding minimal */
+    opacity: 0; /* invisible */
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease,
+        opacity 0.3s ease;
+    cursor: pointer; /* montre qu'on peut cliquer */
+}
+
+/* Barre ouverte quand la classe active est ajoutée */
+.header-search.active input {
+    width: 200px; /* taille normale */
+    padding: 8px 36px 8px 16px;
+    opacity: 1;
+    cursor: text;
+}
+
+/* Icône de recherche */
+.header-search i {
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff2e2e;
+    position: absolute;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* =========================
+   TEXTES ET TITRES RESPONSIVE
+========================= */
+
+/* Tablettes et petits écrans ≤ 992px */
+@media (max-width: 992px) {
+    /* Titres h1-h5 */
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    h4 {
+        font-size: 1.8rem;
+    }
+    h5 {
+        font-size: 1.6rem;
+    }
+
+    /* Paragraphes */
+    p,
+    p.lead,
+    .about-section p,
+    .projects-section p,
+    .skills-section p,
+    .contact-section p {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    /* Compteurs */
+    .about-section .counter {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobiles très petits ≤ 576px */
+@media (max-width: 576px) {
+    /* Titres h1-h5 */
+    h1 {
+        font-size: 2.3rem !important;
+    }
+    h2 {
+        font-size: 2rem !important;
+    }
+    h3 {
+        font-size: 1.8rem !important;
+    }
+    h4 {
+        font-size: 1.6rem !important;
+    }
+    h5 {
+        font-size: 1.4rem !important;
+    }
+
+    /* Paragraphes */
+    p,
+    p.lead,
+    .about-section p,
+    .projects-section p,
+    .skills-section p,
+    .contact-section p {
+        font-size: 1.4rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Compteurs */
+    .about-section .counter {
+        font-size: 1.6rem !important;
+    }
+
+    /* Boutons About section (pour garder côte à côte) */
+    .about-section .btn-login,
+    .about-section .btn-outline-dark {
+        flex: 1 1 45%;
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}
