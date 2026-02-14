@@ -36,8 +36,14 @@ RUN php artisan storage:link
 # 9️⃣ Donner les droits sur storage, bootstrap/cache et public
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public
 
-# 🔟 Exposer le port 80
+# 🔟 Mettre le cache Laravel à jour (important pour Render)
+RUN php artisan config:clear
+RUN php artisan config:cache
+RUN php artisan route:cache
+RUN php artisan view:cache
+
+# 1️⃣1️⃣ Exposer le port 80
 EXPOSE 80
 
-# 1️⃣1️⃣ Lancer Apache en avant-plan
+# 1️⃣2️⃣ Lancer Apache en avant-plan
 CMD ["apache2-foreground"]
