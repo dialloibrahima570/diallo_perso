@@ -14,7 +14,7 @@ use App\Models\RequestItem;
 use App\Observers\RequestItemObserver;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Http;
- use Illuminate\Support\Facades\URL;
+
 
 
 
@@ -41,12 +41,8 @@ class AppServiceProvider extends ServiceProvider
     }
 
    
-public function boot()
-{
-    if (env('APP_ENV') === 'production') {
-        URL::forceScheme('https');
-    }
-}
+
+
 
 }
 
