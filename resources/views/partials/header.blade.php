@@ -1,8 +1,8 @@
 <header class="fixed-top bg-dark">
-  <div class="container d-flex align-items-center justify-content-between py-2">
-    <a href="{{ route('home') }}#home" class="navbar-brand text-white fs-3 fw-bold">
+  <div class="container py-2 d-flex align-items-center justify-content-between">
+    <a href="{{ route('home') }}#home" class="text-white navbar-brand fs-3 fw-bold">
      <div class="logo">
-    <img src="{{asset('storage/images/LOGO.png') }}" alt="Diallo" class="logo-img">
+    <img src="{{asset('images/LOGO.png') }}" alt="Diallo" class="logo-img">
     <span class="logo-text">Diallo</span>
 </div>
 
@@ -11,15 +11,15 @@
     <!-- Menu desktop -->
     <nav class="d-none d-lg-block">
       <ul class="nav align-items-center">
-        <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#home">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#about">À propos</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#skills">Compétences</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#projects">Projets</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#contact">Contact</a></li>
+        <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#home">Accueil</a></li>
+        <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#about">À propos</a></li>
+        <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#skills">Compétences</a></li>
+        <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#projects">Projets</a></li>
+        <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="d-flex align-items-center gap-2 flex-grow-1">
+    <div class="gap-2 d-flex align-items-center flex-grow-1">
       <!-- Barre de recherche -->
       <div class="header-search flex-grow-1 me-2 position-relative">
     <input type="text" id="searchInput" placeholder="Rechercher..." class="form-control form-control-sm" autocomplete="off">
@@ -44,15 +44,15 @@
 
   <!-- Menu mobile -->
   <div class="collapse bg-dark" id="mobileNav">
-    <ul class="nav flex-column text-center py-3">
-      <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#home">Accueil</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#about">À propos</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#skills">Compétences</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#projects">Projets</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}#contact">Contact</a></li>
+    <ul class="py-3 text-center nav flex-column">
+      <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#home">Accueil</a></li>
+      <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#about">À propos</a></li>
+      <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#skills">Compétences</a></li>
+      <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#projects">Projets</a></li>
+      <li class="nav-item"><a class="text-white nav-link" href="{{ route('home') }}#contact">Contact</a></li>
 
       <!-- Connexion mobile -->
-      <li class="nav-item mt-2 d-lg-none">
+      <li class="mt-2 nav-item d-lg-none">
         <a href="{{ route('login') }}" class="btn btn-login w-100 btn-sm">
           <i class="bi bi-box-arrow-in-right"></i> Connexion
         </a>
