@@ -14,7 +14,7 @@
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <img src="{{  asset('storage/images/hom3.jpg') }}"
+        <img src="{{  asset('images/hom3.jpg') }}"
              class="d-block w-100"
              alt="Développeur Web et Mobile"
              fetchpriority="high"
@@ -37,7 +37,7 @@
 
       <!-- Slide 2 -->
       <div class="carousel-item">
-        <img src="{{ asset('storage/images/hero.jpg') }}"
+        <img src="{{ asset('images/hero.jpg') }}"
              class="d-block w-100"
              alt="Création de sites modernes"
              loading="lazy"
@@ -60,7 +60,7 @@
 
       <!-- Slide 3 -->
       <div class="carousel-item">
-        <img src="{{ asset('storage/images/DIA.png') }}"
+        <img src="{{ asset('images/DIA.png') }}"
              class="d-block w-100"
              alt="Applications mobiles"
              loading="lazy"
@@ -101,7 +101,7 @@
     <div class="row align-items-center">
 
       <div class="mb-4 col-lg-5">
-        <img src="{{ asset('storage/images/DIALLO.png') }}"
+        <img src="{{ asset('images/DIALLO.png') }}"
              class="rounded shadow img-fluid"
              alt="Profil Diallo"
              loading="lazy"

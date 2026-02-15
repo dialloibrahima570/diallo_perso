@@ -10,10 +10,8 @@ use App\Observers\TelechargerCVObserver;
 use App\Models\ProjectRequest;
 use App\Observers\ProjectRequestObserver;
 use App\Models\TelechargerCV;
-use App\Models\RequestItem;
-use App\Observers\RequestItemObserver;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\URL;
+
 
 
 
@@ -35,7 +33,10 @@ class AppServiceProvider extends ServiceProvider
        TelechargerCV::observe(TelechargerCVObserver::class);
 
 
-
+       // Forcer HTTPS en production
+    if ($this->app->environment('production')) {
+        URL::forceScheme('https');
+    }
 
 
     }
