@@ -206,7 +206,7 @@
       @foreach( $projects as $project)
       <div class="col-md-4">
         <div class="shadow card project-card">
-          <img src="{{ asset('storage/images/'.$project['img']) }}"
+          <img src="{{ asset('images/'.$project['img']) }}"
                class="card-img-top"
                loading="lazy"
                decoding="async"
